@@ -5,18 +5,17 @@ import { Link } from 'react-router-dom'
 //記事一覧取得API
 const postListUrl: string = "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts";
 
+export type Post = {
+ id: number,
+ title: string,
+ thumbnailUrl: string,
+ createdAt: string,
+ categories: string[],
+ content: string
+}
 export const Main: React.FC = () => {
 
-  type Posts = {
-    id: number,
-    title: string,
-    thumbnailUrl: string,
-    createdAt: string,
-    categories: string[],
-    content: string
-  }
-
-  const [posts, setPosts] = useState<Posts[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
