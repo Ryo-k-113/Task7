@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
-import { Post } from './Main'
-
+import { Post } from '../types/Post'
 //記事詳細API
+
 const postDetailUrl = "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts";
 
 
