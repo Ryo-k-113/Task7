@@ -1,21 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import { Post } from './Main'
 
 //記事詳細API
 const postDetailUrl = "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts";
 
-type Post = {
-  id: number,
-  title: string,
-  thumbnailUrl: string,
-  createdAt: string,
-  categories: string[],
-  content: string
-};
+
 
 export const Article: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [post, setPost] = useState<Post>({} as Post);
+  const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
