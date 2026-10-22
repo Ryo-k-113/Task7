@@ -6,5 +6,7 @@ export type Post = {
  createdAt: string,
  categories: string[],
  content: string
+ createdAt: Date;
+ updatedAt: Date;
 }
 

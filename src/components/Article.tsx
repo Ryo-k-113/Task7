@@ -10,7 +10,7 @@ const postDetailUrl = "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.c
 export const Article: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<Post | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetcher = async () => {
